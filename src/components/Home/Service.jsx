@@ -47,6 +47,11 @@ const Service = () => {
           <p className="text-xl font-semibold text-[#FF3811]">Price: $120</p>
         </div>
       </div>
+      <div className="flex justify-center my-6">
+        <button className="px-10 py-2 text-[#FF3811] border border-[#FF3811]">
+          More Services
+        </button>
+      </div>
     </div>
   );
 };
