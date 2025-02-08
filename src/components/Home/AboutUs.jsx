@@ -27,6 +27,7 @@ const AboutUs = () => {
           the majority have suffered alteration in some form, by injected
           humour, or randomised words which don,t look even slightly believable.
         </p>
+        <button className="text-white font-medium bg-rose-500 px-7 py-3 rounded-sm">Get More Info</button>
       </div>
     </div>
   );
