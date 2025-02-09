@@ -2,7 +2,7 @@ import { FaStarOfDavid } from "react-icons/fa";
 
 const PopularProducts = () => {
   return (
-    <div className="container mx-auto my-10">
+    <div className="container mx-auto my-16">
       <div className="text-center mb-8">
         <h2 className="text-xl font-bold">Popular Products</h2>
         <h2 className="text-5xl font-bold my-4">Browse Our Products</h2>

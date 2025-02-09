@@ -1,6 +1,6 @@
 const AboutUs = () => {
   return (
-    <div className="container mx-auto my-10 md:flex">
+    <div className="container mx-auto my-16 md:flex">
       <div className="md:mr-36">
         <img
           className="relative min-w-[500px] h-[473px] object-cover"
@@ -8,7 +8,7 @@ const AboutUs = () => {
           alt=""
         />
         <img
-          className="w-[337px] h-[320px] absolute top-[218px] right-[714px] lg:block hidden"
+          className="w-[337px] h-[320px] absolute top-[241px] right-[714px] lg:block hidden"
           src="https://i.ibb.co/HD0zcxPL/parts.jpg"
           alt="Parts"
         />
