@@ -1,4 +1,5 @@
 import AboutUs from "../components/Home/AboutUs";
+import CoreFeatures from "../components/Home/CoreFeatures";
 import MeetOurTeam from "../components/Home/MeetOurTeam";
 import OpenContactLocation from "../components/Home/OpenContactLocation";
 import PopularProducts from "../components/Home/PopularProducts";
@@ -12,6 +13,7 @@ const Home = () => {
       <OpenContactLocation />
       <PopularProducts />
       <MeetOurTeam />
+      <CoreFeatures/>
     </div>
   );
 };
