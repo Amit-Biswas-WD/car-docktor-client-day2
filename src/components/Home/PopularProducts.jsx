@@ -8,9 +8,9 @@ const PopularProducts = () => {
         <h2 className="text-5xl font-bold my-4">Browse Our Products</h2>
         <div className="flex justify-center items-center">
           <p className="text-base font-normal max-w-[717px]">
-            the majority have suffered alteration in some form, by injected
-            humour, or randomised words which don,t look even slightly
-            believable.
+            Browse Our Products: Quality auto parts, engine oils, car
+            accessories, tires, batteries, brakes, tools, filters, maintenance
+            kits, and more!
           </p>
         </div>
       </div>

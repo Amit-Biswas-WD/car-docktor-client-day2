@@ -19,51 +19,51 @@ const CoreFeatures = () => {
         </div>
       </div>
       <div className="grid sm:grid-cols-4 md:grid-cols-6 gap-y-8">
-        <div className="border hover:border-white group border-black rounded-lg mx-auto p-8 hover:bg-[#FF3811]">
-          <div className="flex justify-center items-center text-center group-hover:text-white">
+        <div className="border hover:border-white group border-black rounded-lg mx-auto p-8 hover:bg-[#FF3811] duration-1000">
+          <div className="flex justify-center items-center text-center group-hover:text-white duration-1000">
             <GiTeamIdea className="w-[75px] h-[53px] my-3" />
           </div>
-          <h2 className="text-base text-[#444] font-semibold group-hover:text-white">
+          <h2 className="text-base text-[#444] font-semibold group-hover:text-white duration-1000">
             Expert Team
           </h2>
         </div>
-        <div className="border hover:border-white group border-black rounded-lg mx-auto p-8 hover:bg-[#FF3811]">
-          <div className="flex justify-center items-center text-center group-hover:text-white">
+        <div className="border hover:border-white group border-black rounded-lg mx-auto p-8 hover:bg-[#FF3811] duration-1000">
+          <div className="flex justify-center items-center text-center group-hover:text-white duration-1000">
             <IoStopwatchOutline className="w-[75px] h-[53px] my-3" />
           </div>
-          <h2 className="text-base text-[#444] font-semibold group-hover:text-white">
+          <h2 className="text-base text-[#444] font-semibold group-hover:text-white duration-1000">
             Timely Delivery
           </h2>
         </div>
-        <div className="border hover:border-white group border-black rounded-lg mx-auto p-8 hover:bg-[#FF3811]">
-          <div className="flex justify-center items-center text-center group-hover:text-white">
+        <div className="border hover:border-white group border-black rounded-lg mx-auto p-8 hover:bg-[#FF3811] duration-1000">
+          <div className="flex justify-center items-center text-center group-hover:text-white duration-1000">
             <FcCustomerSupport className="w-[75px] h-[53px] my-3" />
           </div>
-          <h2 className="text-base text-[#444] font-semibold group-hover:text-white">
+          <h2 className="text-base text-[#444] font-semibold group-hover:text-white duration-1000">
             24/7 Support
           </h2>
         </div>
-        <div className="border hover:border-white group border-black rounded-lg mx-auto p-8 hover:bg-[#FF3811]">
-          <div className="flex justify-center items-center text-center group-hover:text-white">
+        <div className="border hover:border-white group border-black rounded-lg mx-auto p-8 hover:bg-[#FF3811] duration-1000">
+          <div className="flex justify-center items-center text-center group-hover:text-white duration-1000">
             <GiAutoRepair className="w-[75px] h-[53px] my-3" />
           </div>
-          <h2 className="text-base text-[#444] font-semibold group-hover:text-white">
+          <h2 className="text-base text-[#444] font-semibold group-hover:text-white duration-1000">
             Best Equipment
           </h2>
         </div>
-        <div className="border hover:border-white group border-black rounded-lg mx-auto p-8 hover:bg-[#FF3811]">
-          <div className="flex justify-center items-center text-center group-hover:text-white">
+        <div className="border hover:border-white group border-black rounded-lg mx-auto p-8 hover:bg-[#FF3811] duration-1000">
+          <div className="flex justify-center items-center text-center group-hover:text-white duration-1000">
             <AiOutlineSafety className="w-[75px] h-[53px] my-3" />
           </div>
-          <h2 className="text-base text-[#444] font-semibold group-hover:text-white">
+          <h2 className="text-base text-[#444] font-semibold group-hover:text-white duration-1000">
             100% Guranty
           </h2>
         </div>
-        <div className="border hover:border-white group border-black rounded-lg mx-auto p-8 hover:bg-[#FF3811]">
-          <div className="flex justify-center items-center text-center group-hover:text-white">
+        <div className="border hover:border-white group border-black rounded-lg mx-auto p-8 hover:bg-[#FF3811] duration-1000">
+          <div className="flex justify-center items-center text-center group-hover:text-white duration-1000">
             <TbTruckDelivery className="w-[75px] h-[53px] my-3" />
           </div>
-          <h2 className="text-base text-[#444] font-semibold group-hover:text-white">
+          <h2 className="text-base text-[#444] font-semibold group-hover:text-white duration-1000">
             Timely Delivery
           </h2>
         </div>

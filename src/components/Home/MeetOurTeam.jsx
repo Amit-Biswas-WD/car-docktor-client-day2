@@ -8,9 +8,10 @@ const MeetOurTeam = () => {
         <h2 className="text-5xl font-bold my-4">Meet Our Team</h2>
         <div className="flex justify-center items-center">
           <p className="text-base font-normal max-w-[717px]">
-            the majority have suffered alteration in some form, by injected
-            humour, or randomised words which don,t look even slightly
-            believable.
+            Meet Our Team: Skilled mechanics, certified professionals,
+            passionate experts, dedicated staff, reliable service,
+            customer-focused, experienced, friendly, trustworthy, committed to
+            excellence!
           </p>
         </div>
       </div>
