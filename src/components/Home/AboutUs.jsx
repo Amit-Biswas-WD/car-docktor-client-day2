@@ -8,7 +8,7 @@ const AboutUs = () => {
           alt=""
         />
         <img
-          className="w-[337px] h-[320px] absolute top-[241px] right-[714px] lg:block hidden"
+          className="w-[337px] h-[320px] absolute top-[484px] right-[714px] lg:block hidden"
           src="https://i.ibb.co/HD0zcxPL/parts.jpg"
           alt="Parts"
         />
