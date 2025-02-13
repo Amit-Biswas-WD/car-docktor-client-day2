@@ -18,8 +18,8 @@ const CoreFeatures = () => {
           </p>
         </div>
       </div>
-      <div className="grid sm:grid-cols-4 md:grid-cols-6 gap-y-8">
-        <div className="border hover:border-white group border-black rounded-lg mx-auto p-8 hover:bg-[#FF3811] duration-1000">
+      <div className="grid sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-y-8 gap-x-8">
+      <div className="border hover:border-white group border-black rounded-lg mx-auto p-8 hover:bg-[#FF3811] duration-1000">
           <div className="flex justify-center items-center text-center group-hover:text-white duration-1000">
             <GiTeamIdea className="w-[75px] h-[53px] my-3" />
           </div>
