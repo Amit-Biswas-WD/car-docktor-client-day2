@@ -1,4 +1,12 @@
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider";
+import { Link } from "react-router-dom";
+import Github from "../shared/Github";
+import Google from "../shared/Google";
+
 const Login = () => {
+  const { signIn } = useContext(AuthContext);
+
   const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -6,6 +14,14 @@ const Login = () => {
     const password = form.password.value;
     const value = { email, password };
     console.log(value);
+
+    signIn(email, password)
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
   return (
     <div className="hero bg-base-200 min-h-screen">
@@ -41,6 +57,20 @@ const Login = () => {
                 Login
               </button>
             </form>
+            <p className="text-base">
+              Have an account?
+              <Link to={`/signUp`}>
+                <span className="text-red-600 font-semibold pl-2">Sign In</span>
+              </Link>
+            </p>
+            <div className="flex justify-between items-center mt-1">
+              <div className="">
+                <Google/>
+              </div>
+              <div className="">
+              <Github/>
+              </div>
+            </div>
           </div>
         </div>
       </div>

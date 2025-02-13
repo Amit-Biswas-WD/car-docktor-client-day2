@@ -1,5 +1,8 @@
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
+import { Link } from "react-router-dom";
+import Github from "../shared/Github";
+import Google from "../shared/Google";
 
 const SignUp = () => {
   const { createUser } = useContext(AuthContext);
@@ -65,13 +68,25 @@ const SignUp = () => {
                 className="input"
                 placeholder="Password"
               />
-              <div>
-                <a className="link link-hover">Forgot password?</a>
-              </div>
+              <div></div>
               <button type="submit" className="btn btn-neutral mt-4">
-                Login
+                SignUp
               </button>
             </form>
+            <p className="text-base">
+              Already have an account?
+              <Link to={`/login`}>
+                <span className="text-red-600 font-semibold pl-2">Login</span>
+              </Link>
+            </p>
+            <div className="flex justify-between items-center mt-1">
+              <div className="flex gap-2 items-center btn">
+                <Google />
+              </div>
+              <div className="btn">
+                <Github />
+              </div>
+            </div>
           </div>
         </div>
       </div>
