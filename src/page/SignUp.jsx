@@ -12,7 +12,7 @@ const SignUp = () => {
     const form = event.target;
     const name = form.name.value;
     const email = form.email.value;
-    const photo = form.email.value;
+    const photo = form.photo.value;
     const password = form.password.value;
     const value = { name, email, photo, password };
     console.log(value);

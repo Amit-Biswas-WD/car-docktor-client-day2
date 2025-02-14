@@ -6,6 +6,7 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signInWithPopup,
+  signOut,
 } from "firebase/auth";
 import auth from "./../firebase.config";
 
@@ -37,6 +38,11 @@ const AuthProvider = ({ children }) => {
     return signInWithPopup(auth, githubProvider);
   };
 
+  const logOut = () => {
+    setLoading(true)
+    return signOut(auth);
+  };
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUsers(currentUser);
@@ -54,7 +60,8 @@ const AuthProvider = ({ children }) => {
     createUser,
     signIn,
     google,
-    gitHub
+    gitHub,
+    logOut
   };
 
   return (
