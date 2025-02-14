@@ -1,4 +1,17 @@
+import { useEffect, useState } from "react";
+import Services from "./Services";
+
 const Service = () => {
+  const [services, setServices] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/services")
+      .then((res) => res.json())
+      .then((data) => {
+        setServices(data);
+      });
+  }, []);
+
   return (
     <div className="container mx-auto my-16">
       <div className="text-center mb-8">
@@ -13,39 +26,9 @@ const Service = () => {
         </div>
       </div>
       <div className="grid sm:grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-10">
-        <div className="col-span-1 border border-gray-600 p-6">
-          <div className="w-full h-auto">
-            <img
-              className="w-full h-[208px] object-cover"
-              src="https://i.ibb.co/20KWn32G/Screenshot-4.png"
-              alt="Car Doctor"
-            />
-          </div>
-          <h2 className="text-2xl font-bold my-3">Title: This is Car Doctor</h2>
-          <p className="text-xl font-semibold text-[#FF3811]">Price: $120</p>
-        </div>
-        <div className="col-span-1 border border-gray-600 p-6">
-          <div className="w-full h-auto">
-            <img
-              className="w-full h-[208px] object-cover"
-              src="https://i.ibb.co/20KWn32G/Screenshot-4.png"
-              alt="Car Doctor"
-            />
-          </div>
-          <h2 className="text-2xl font-bold my-3">Title: This is Car Doctor</h2>
-          <p className="text-xl font-semibold text-[#FF3811]">Price: $120</p>
-        </div>
-        <div className="col-span-1 border border-gray-600 p-6">
-          <div className="w-full h-auto">
-            <img
-              className="w-full h-[208px] object-cover"
-              src="https://i.ibb.co/20KWn32G/Screenshot-4.png"
-              alt="Car Doctor"
-            />
-          </div>
-          <h2 className="text-2xl font-bold my-3">Title: This is Car Doctor</h2>
-          <p className="text-xl font-semibold text-[#FF3811]">Price: $120</p>
-        </div>
+        {services.map((service) => (
+          <Services service={service} key={service._id}/>
+        ))}
       </div>
       <div className="flex justify-center my-6">
         <button className="px-10 py-2 text-[#FF3811] border border-[#FF3811]">
