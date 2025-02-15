@@ -8,7 +8,8 @@ import Services from "../page/Services";
 import Blog from "../page/Blog";
 import Contact from "../page/Contact";
 import BookService from "../page/BookService/BookService";
-import Bookings from './../page/Bookings/Bookings';
+import Bookings from "./../page/Bookings/Bookings";
+import PrivateRoutes from "./PrivateRoutes";
 
 export const router = createBrowserRouter([
   {
@@ -51,8 +52,12 @@ export const router = createBrowserRouter([
       },
       {
         path: "/bookings",
-        element: <Bookings/>
-      }
+        element: (
+          <PrivateRoutes>
+            <Bookings />
+          </PrivateRoutes>
+        ),
+      },
     ],
   },
 ]);
