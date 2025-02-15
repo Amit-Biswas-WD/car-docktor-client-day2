@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
+import { toast } from "react-toastify";
 
 const Google = () => {
   const { google } = useContext(AuthContext);
@@ -9,6 +10,7 @@ const Google = () => {
     google()
       .then((result) => {
         console.log(result.user);
+        toast("Google Login successfully")
       })
       .catch((error) => {
         console.log(error);

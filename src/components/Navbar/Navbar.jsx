@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { AuthContext } from "../../provider/AuthProvider";
-import img from "../../assets/profile.png"
+import { toast } from "react-toastify";
 
 const Navbar = () => {
   const { users, logOut } = useContext(AuthContext);
@@ -12,7 +12,7 @@ const Navbar = () => {
   const handleLogOut = () => {
     logOut()
       .then(() => {
-        console.log("Logged out successfully");
+        toast("Logged out successfully!")
       })
       .catch((error) => {
         console.log(error);
@@ -34,7 +34,7 @@ const Navbar = () => {
         <div className="text-2xl font-bold">Logo</div>
 
         {/* Hamburger Menu (Mobile) */}
-        <button 
+        <button
           className="md:hidden text-white"
           onClick={() => setIsOpen(!isOpen)}
         >
@@ -62,20 +62,23 @@ const Navbar = () => {
           {users?.email ? (
             <li className="flex items-center space-x-3">
               {/* Profile Image with Tooltip */}
-              <div 
+              <div
                 className="relative cursor-pointer"
                 onMouseEnter={() => setShowTooltip(true)}
                 onMouseLeave={() => setShowTooltip(false)}
               >
-                <img 
-                  src={users.photoURL || {img}} 
-                  alt="User Profile" 
+                <img
+                  src={
+                    users.photoURL ||
+                    "https://i.ibb.co.com/5QBXv09/Screenshot-4.png"
+                  }
+                  alt="User Profile"
                   className="w-10 h-10 rounded-full border-2 border-white"
                 />
-                
+
                 {/* Tooltip (Name & Email) */}
                 {showTooltip && (
-                  <div className="absolute left-1/2 transform -translate-x-1/2 top-10 bg-gray-700 text-white text-sm px-3 py-2 rounded shadow-lg">
+                  <div className="fixed top-14 left-280 transform -translate-x-1/2 bg-gray-700 text-white text-sm px-3 py-2 rounded shadow-lg z-50">
                     <p>{users.displayName || "No Name"}</p>
                     <p>{users.email}</p>
                   </div>
@@ -126,17 +129,17 @@ const Navbar = () => {
           {users?.email ? (
             <li className="flex flex-col items-center space-y-3">
               {/* Profile Image with Tooltip */}
-              <div 
+              <div
                 className="relative cursor-pointer"
                 onMouseEnter={() => setShowTooltip(true)}
                 onMouseLeave={() => setShowTooltip(false)}
               >
-                <img 
-                  src={users.photoURL || {img}} 
-                  alt="User Profile" 
+                <img
+                  src={users.photoURL || { img }}
+                  alt="User Profile"
                   className="w-10 h-10 rounded-full border-2 border-white"
                 />
-                
+
                 {/* Tooltip (Mobile) */}
                 {showTooltip && (
                   <div className="absolute left-1/2 transform -translate-x-1/2 -top-14 bg-gray-700 text-white text-sm px-3 py-2 rounded shadow-lg">

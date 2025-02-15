@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { BsGithub } from "react-icons/bs";
+import { toast } from "react-toastify";
 
 const Github = () => {
   const { gitHub } = useContext(AuthContext);
@@ -9,6 +10,7 @@ const Github = () => {
     gitHub()
       .then((result) => {
         console.log(result.user);
+        toast("Github Login successfully");
       })
       .catch((error) => {
         console.log(error);
