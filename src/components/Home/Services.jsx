@@ -17,7 +17,7 @@ const Services = ({service}) => {
     <h2 className="text-2xl font-bold my-3">Title: {title}</h2>
     <div className="flex items-center justify-between text-[#FF3811]">
       <p className="text-xl font-semibold">Price: ${price}</p>
-      <Link to={`/checkout/${_id}`}>
+      <Link to={`/book/${_id}`}>
         <FaArrowRightLong />
       </Link>
     </div>

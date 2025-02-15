@@ -22,10 +22,11 @@ const Navbar = () => {
   const navItems = [
     { path: "/", label: "Home" },
     { path: "/about", label: "About" },
-    { path: "/services", label: "Services" },
+    ...(users?.email ? [{ path: "/bookings", label: "My Bookings" }] : []),
     { path: "/blog", label: "Blog" },
     { path: "/contact", label: "Contact" },
   ];
+  
 
   return (
     <nav className="bg-gray-800 text-white p-4">
@@ -135,7 +136,7 @@ const Navbar = () => {
                 onMouseLeave={() => setShowTooltip(false)}
               >
                 <img
-                  src={users.photoURL || { img }}
+                  src={users.photoURL || "https://i.ibb.co.com/5QBXv09/Screenshot-4.png"}
                   alt="User Profile"
                   className="w-10 h-10 rounded-full border-2 border-white"
                 />

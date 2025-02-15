@@ -1,7 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import { toast } from "react-toastify";
 
-const CheckOut = () => {
+const BookService = () => {
   const data = useLoaderData();
   const { _id, title, price, img } = data;
 
@@ -37,7 +37,6 @@ const CheckOut = () => {
         }
       });
   };
-
   return (
     <div>
       <div className="card-body bg-[#F3F3F3]">
@@ -90,4 +89,4 @@ const CheckOut = () => {
   );
 };
 
-export default CheckOut;
+export default BookService;
