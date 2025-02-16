@@ -1,4 +1,6 @@
-const BookingRow = ({ booking }) => {
+import { MdDelete } from "react-icons/md";
+
+const BookingRow = ({ booking,handleDelete }) => {
   const { _id, customerName, email, date, service, price, img, service_id } =
     booking;
 
@@ -6,7 +8,9 @@ const BookingRow = ({ booking }) => {
     <tr>
       <th>
         <label>
-          <button>Delete</button>
+          <button onClick={() => handleDelete(_id)}>
+            <MdDelete className="w-10 h-auto text-red-500" />{" "}
+          </button>
         </label>
       </th>
       <td>
