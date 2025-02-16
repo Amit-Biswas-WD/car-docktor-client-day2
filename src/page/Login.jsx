@@ -1,11 +1,13 @@
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Github from "../shared/Github";
 import Google from "../shared/Google";
 
 const Login = () => {
   const { signIn } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -17,7 +19,9 @@ const Login = () => {
 
     signIn(email, password)
       .then((result) => {
-        console.log(result.user);
+        const user = result.user
+        console.log(user);
+        navigate(location.state ? location.state : "/");
       })
       .catch((err) => {
         console.log(err);
@@ -65,10 +69,10 @@ const Login = () => {
             </p>
             <div className="flex justify-between items-center mt-1">
               <div className="">
-                <Google/>
+                <Google />
               </div>
               <div className="">
-              <Github/>
+                <Github />
               </div>
             </div>
           </div>

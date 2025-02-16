@@ -1,11 +1,13 @@
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Github from "../shared/Github";
 import Google from "../shared/Google";
 
 const SignUp = () => {
   const { createUser } = useContext(AuthContext);
+  const location = useLocation()
+  const navigate = useNavigate()
 
   const handleSignUp = (event) => {
     event.preventDefault();
@@ -20,6 +22,7 @@ const SignUp = () => {
     createUser(email, password)
       .then((result) => {
         console.log(result.user);
+        navigate(location?.state ? location?.state : "/")
       })
       .catch((error) => {
         console.log(error.message);
