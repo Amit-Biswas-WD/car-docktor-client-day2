@@ -1,7 +1,7 @@
 import { MdDelete } from "react-icons/md";
 
-const BookingRow = ({ booking,handleDelete, handleConfirm }) => {
-  const { _id, customerName, email, date, service, price, img, service_id } =
+const BookingRow = ({ booking, handleDelete, handleConfirm }) => {
+  const { _id, customerName, email, date, service, price, img, status, service_id } =
     booking;
 
   return (
@@ -26,7 +26,16 @@ const BookingRow = ({ booking,handleDelete, handleConfirm }) => {
       <td>{email}</td>
       <td>{date}</td>
       <th>
-        <button onClick={() => handleConfirm(_id)} className="btn btn-ghost btn-xs">Confirm</button>
+        {status === "confirm" ? (
+          <span className="font-bold text-primary">Confirmed</span>
+        ) : (
+          <button
+            onClick={() => handleConfirm(_id)}
+            className="btn btn-ghost btn-xs"
+          >
+           Please Confirm
+          </button>
+        )}
       </th>
     </tr>
   );
