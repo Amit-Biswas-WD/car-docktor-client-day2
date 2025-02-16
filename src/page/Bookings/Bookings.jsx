@@ -9,7 +9,7 @@ const Bookings = () => {
 
   useEffect(() => {
     if (users?.email) {
-      const uri = `http://localhost:5000/bookings`;
+      const uri = `http://localhost:5000/bookings?email=${users?.email}`;
 
       // ?email=${users.email}
 
@@ -42,13 +42,30 @@ const Bookings = () => {
                 icon: "success",
               });
               const remaining = bookings.filter(
-                (booking) => booking._id === id
+                (booking) => booking._id !== id
               );
               setBookings(remaining);
             }
           });
       }
     });
+  };
+
+  const handleConfirm = (id) => {
+    fetch(`http://localhost:5000/bookings/${id}`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ status: "confirm" }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount > 0) {
+          // Update state
+        }
+      });
   };
 
   return (
@@ -73,6 +90,7 @@ const Bookings = () => {
               <BookingRow
                 key={booking._id}
                 handleDelete={handleDelete}
+                handleConfirm={handleConfirm}
                 booking={booking}
               />
             ))}
