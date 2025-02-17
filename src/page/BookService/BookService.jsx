@@ -50,7 +50,7 @@ const BookService = () => {
                 name="name"
                 type="text"
                 className="input w-full"
-                placeholder="First Name"
+                placeholder="Your Name"
               />
             </div>
             <div className="w-[48%]">

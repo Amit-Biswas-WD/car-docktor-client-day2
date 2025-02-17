@@ -2,23 +2,25 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import BookingRow from "./BookingRow";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 const Bookings = () => {
   const { users } = useContext(AuthContext);
   const [bookings, setBookings] = useState([]);
 
+  const uri = `http://localhost:5000/bookings?email=${users?.email}`;
+
   useEffect(() => {
-    if (users?.email) {
-      const uri = `http://localhost:5000/bookings?email=${users?.email}`;
+    axios.get(uri, {withCredentials: true})
+    .then((res) => {
+      setBookings(res.data);
+    });
 
-      // ?email=${users.email}
-
-      fetch(uri)
-        .then((res) => res.json())
-        .then((data) => setBookings(data))
-        .catch((error) => console.error("Error fetching bookings:", error));
-    }
-  }, [users?.email]);
+    // fetch(uri)
+    //   .then((res) => res.json())
+    //   .then((data) => setBookings(data))
+    //   .catch((error) => console.error("Error fetching bookings:", error));
+  }, [uri]);
 
   const handleDelete = (id) => {
     Swal.fire({
