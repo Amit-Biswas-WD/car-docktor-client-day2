@@ -9,6 +9,7 @@ import {
   signOut,
 } from "firebase/auth";
 import auth from "./../firebase.config";
+import axios from "axios";
 
 export const AuthContext = createContext();
 
@@ -39,15 +40,33 @@ const AuthProvider = ({ children }) => {
   };
 
   const logOut = () => {
-    setLoading(true)
+    setLoading(true);
     return signOut(auth);
   };
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      const userEmail = currentUser?.email || users?.email;
+      const loggedUser = { email: userEmail };
       setUsers(currentUser);
       console.log("Current User", currentUser);
       setLoading(false);
+      // if user exists then issue a problem
+      if (currentUser) {
+        axios.post("http://localhost:5000/jwt", loggedUser, {
+            withCredentials: true,
+          })
+          .then((res) => {
+            console.log("token user", res.data);
+          });
+      } else {
+        axios.post("http://localhost:5000/logOut", loggedUser, {
+            withCredentials: true,
+          })
+          .then((res) => {
+            console.log(res.data);
+          });
+      }
     });
     return () => {
       return unsubscribe();
@@ -61,7 +80,7 @@ const AuthProvider = ({ children }) => {
     signIn,
     google,
     gitHub,
-    logOut
+    logOut,
   };
 
   return (
