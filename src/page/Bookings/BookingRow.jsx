@@ -1,7 +1,7 @@
 import { MdDelete } from "react-icons/md";
 
 const BookingRow = ({ booking, handleDelete, handleConfirm }) => {
-  const { _id, customerName, email, date, service, price, img, status, service_id } =
+  const { _id, customerName, email, date, img, status } =
     booking;
 
   return (

@@ -1,12 +1,11 @@
-import { useContext } from "react";
-import { AuthContext } from "../provider/AuthProvider";
 import { BsGithub } from "react-icons/bs";
 import { toast } from "react-toastify";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
+import useAuth from "../hooks/useAuth";
 
 const Github = () => {
-  const { gitHub } = useContext(AuthContext);
+  const { gitHub } = useAuth()
   const location = useLocation();
   const navigate = useNavigate();
 

@@ -1,12 +1,11 @@
-import { useContext } from "react";
-import { AuthContext } from "../provider/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
 import { toast } from "react-toastify";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
+import useAuth from "../hooks/useAuth";
 
 const Google = () => {
-  const { google } = useContext(AuthContext);
+  const { google } = useAuth()
   const location = useLocation();
   const navigate = useNavigate();
 
