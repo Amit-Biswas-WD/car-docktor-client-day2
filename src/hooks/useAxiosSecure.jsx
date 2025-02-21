@@ -1,11 +1,10 @@
 import axios from "axios";
 import { useEffect } from "react";
 import useAuth from "./useAuth";
-import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
 const axiosSecure = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: "https://car-doctor-server-day2.vercel.app",
   withCredentials: true,
 });
 

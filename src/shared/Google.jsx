@@ -16,7 +16,7 @@ const Google = () => {
         toast("Google Login successfully");
         const userData = { email: result.user.email }; 
         // get access token
-        axios.post("http://localhost:5000/jwt", userData, { withCredentials: true }).then((res) => {
+        axios.post("https://car-doctor-server-day2.vercel.app/jwt", userData, { withCredentials: true }).then((res) => {
           console.log(res.data);
           if (res.data.success) {
             navigate(location?.state ? location?.state : "/");
