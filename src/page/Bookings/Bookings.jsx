@@ -21,7 +21,7 @@ const Bookings = () => {
     //   setBookings(res.data);
     // });
 
-    // fetch(uri)
+    // fetch(uri, {withCredentials: "include"})
     //   .then((res) => res.json())
     //   .then((data) => setBookings(data))
     //   .catch((error) => console.error("Error fetching bookings:", error));
